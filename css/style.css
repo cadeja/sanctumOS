@@ -20,20 +20,115 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
-
-body {
-
+:root {
+  --taskbar-height: 40px;
 }
 
+@font-face {
+  font-family: "Windows Regular";
+  src: url('../assets/fonts/leviwindows/Windows\ Regular.ttf');
+}
+
+body {
+  height: 100vh;
+
+  font-family: "Windows Regular";
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
+
+main {
+  background-color: #008080;
+  height: calc(100% - var(--taskbar-height));
+}
+
+
+footer {
+  height: var(--taskbar-height);
+  background-color: lightgray;
+}
+
+
+
+.window {
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  top: 10px;
+  left: 10px;
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #616161;
+  border-bottom: 2px solid #616161;
+
+  box-shadow: 1px 1px black;
+  
+  background-color: #c0c0c0;
+}
+
+.window .top-bar {
+
+  display: flex;
+  justify-content: space-between;
+
+  height: 20px;
+
+  background-color: gray;
+  color: #c0c0c0;
+  margin: 2px;
+  padding: 2px;
+  font-size: .9em;
+
+  font-weight: bold;
 
 }
 
-footer {
+.window .top-bar .button {
+  height: 14px;
+  width: 16px;
+  margin: 1px;
+
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid #616161;
+  border-bottom: 2px solid #616161;
+
+  box-shadow: 1px 1px black;
+
+  background-color: #c0c0c0;
+}
+
+.window .top-bar .button:active {
+  
+  border-top: 2px solid #616161;
+  border-left: 2px solid #616161;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+
+  box-shadow: -1px -1px black;
+}
+
+.window .toolbar {
+  margin: 2px;
+  font-size: .9em;
+}
+
+.window .content {
+  background-color: white;
+  margin: 2px;
+  flex-grow: 1;
+
+  padding: 10px;
+
+  border-top: 2px solid #616161;
+  border-left: 2px solid #616161;
+  border-right: 2px solid #ebebeb;
+  border-bottom: 2px solid #ebebeb;
 
 }
 
